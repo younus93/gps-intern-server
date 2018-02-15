@@ -13,7 +13,7 @@ class HomeController extends Controller
         $row = GPSTable::inRandomOrder()->first();
         $client = new Client();
         $url = request()->get('url');
-        $response = $client->post("https://interns.truckjee.com", [
+        $response = $client->post("http://interns.truckjee.com:3000", [
             'json' => $row->toArray(),
         ]);
         return response([
